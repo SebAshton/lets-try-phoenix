@@ -20,6 +20,6 @@ config :app, App.Repo,
   username: "postgres",
   password: "password",
   database: "app_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
 
