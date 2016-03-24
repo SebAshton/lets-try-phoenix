@@ -1,5 +1,5 @@
 web:
-  image: guiceolin/phoenix-dev
+  build: .
   volumes:
     - ./:/code
   links:
@@ -8,7 +8,7 @@ web:
     - 4000:4000
   command: mix phoenix.server
 db:
-  image: postgres:9.4.6
+  image: postgres
   environment:
     POSTGRES_PASSWORD: password
     POSTGRES_DB: app_dev
