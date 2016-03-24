@@ -1,0 +1,17 @@
+web:
+  image: guiceolin/phoenix-dev
+  volumes:
+    - ./:/code
+  links:
+    - db
+  ports:
+    - 4000:4000
+  command: mix phoenix.server
+db:
+  # image: jonathancamp/alpine-postgres
+  image: postgres:9.4.6
+  environment:
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: app_dev
+  ports:
+    - 15432:5432
