@@ -22,4 +22,3 @@ config :app, App.Repo,
   database: "app_test",
   hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
-
