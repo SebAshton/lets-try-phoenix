@@ -14,6 +14,13 @@ config :app, App.Endpoint,
   pubsub: [name: App.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :arc,
+  bucket: "lets-try-phoenix"
+
+config :ex_aws,
+  access_key_id: System.get_env("AWS_ACCESS_KEY_ID"),
+  secret_access_key: System.get_env("AWS_SECRET_ACCESS_KEY")
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

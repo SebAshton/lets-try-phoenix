@@ -27,7 +27,7 @@ defmodule App.Mixfile do
 
   defp applications(_) do
      [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-      :phoenix_ecto, :postgrex]
+      :phoenix_ecto, :postgrex, :ex_aws, :httpoison]
   end
 
   # Specifies which paths to compile per environment.
@@ -53,7 +53,11 @@ defmodule App.Mixfile do
      {:plug, "~> 1.1.2"},
      {:poolboy, "1.5.1"},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:arc,  "~> 0.2.2"},
+     {:arc_ecto, "~> 0.3.1"},
+     {:ex_aws, "~> 0.4.10"},
+     {:httpoison, "~> 0.7"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

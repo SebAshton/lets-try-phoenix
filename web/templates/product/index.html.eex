@@ -5,6 +5,8 @@
     <li>
       <h3><%= link product.name, to: product_path(@conn, :show, product.id) %></h3>
       <h4>$<%= product.price %></h4>
+      <!-- Here we'll use the url helper for the arc uploader -->
+      <img src='<%= PhoenixCommerce.Image.url({product.image, product}, :thumb) %>' />
       <p><%= product.description %></p>
     </li>
   <% end %>

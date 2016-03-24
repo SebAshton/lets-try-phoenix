@@ -2,8 +2,22 @@ defmodule App.ProductControllerTest do
   use App.ConnCase
 
   alias App.Product
-  @valid_attrs %{description: "some content", name: "some content", price: "120.5"}
+  @upload %Plug.Upload{path: Path.relative_to_cwd("test/files/test_product_image.png"), filename: "test_product_image.png", content_type: "image/jpg"}
+  @valid_attrs %{description: "some content", name: "some content", price: "120.5", image: @upload}
   @invalid_attrs %{}
+
+  test "creates resource and redirects when data is valid", %{conn: conn} do
+    conn = post conn, product_path(conn, :create), product: @valid_attrs
+    assert redirected_to(conn) == product_path(conn, :index)
+    assert Repo.get_by(Product, Map.drop(@valid_attrs, [:image]))
+  end
+  #...
+  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+    product = Repo.insert! %Product{}
+    conn = put conn, product_path(conn, :update, product), product: @valid_attrs
+    assert redirected_to(conn) == product_path(conn, :show, product)
+    assert Repo.get_by(Product, Map.drop(@valid_attrs, [:image]))
+  end
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, product_path(conn, :index)
