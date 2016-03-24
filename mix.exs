@@ -39,11 +39,15 @@ defmodule App.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:decimal, "1.1.1"},
+     {:certifi, "0.4.0"},
      {:connection, "1.0.2"},
      {:db_connection, "~> 0.2"},
      {:ecto, "~> 1.1"},
      {:fs, "~> 0.9"},
+     {:hackney, "1.5.7"},
      {:hound, "~> 0.7.6", only: :test},
+     {:idna, "1.2.0"},
+     {:mimerl, "1.0.2"},
      {:phoenix, "~> 1.1.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:poison, "1.5.2"},
@@ -57,6 +61,8 @@ defmodule App.Mixfile do
      {:arc,  "~> 0.2.2"},
      {:arc_ecto, "~> 0.3.1"},
      {:ex_aws, "~> 0.4.10"},
+     {:ssl_verify_fun, "1.1.0"},
+     {:metrics, "1.0.1"},
      {:httpoison, "~> 0.7"}]
   end
 
