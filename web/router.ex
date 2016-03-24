@@ -19,9 +19,4 @@ defmodule App.Router do
     get "/", PageController, :index
     resources "/products", ProductController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", App do
-  #   pipe_through :api
-  # end
 end
