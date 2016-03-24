@@ -18,5 +18,8 @@ defmodule App.Router do
 
     get "/", PageController, :index
     resources "/products", ProductController
+    get "/cart", CartController, :show
+    post "/cart/add", CartController, :add, as: :add_to_cart
+
   end
 end
