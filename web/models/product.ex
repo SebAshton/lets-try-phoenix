@@ -1,5 +1,6 @@
 defmodule App.Product do
   use App.Web, :model
+  use Arc.Ecto.Model
 
   schema "products" do
     field :name, :string
@@ -10,7 +11,10 @@ defmodule App.Product do
   end
 
   @required_fields ~w(name description price)
-  @optional_fields ~w(image)
+  @optional_fields ~w()
+
+  @required_file_fields ~w()
+  @optional_file_fields ~w(image)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
