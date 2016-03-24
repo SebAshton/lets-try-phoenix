@@ -4,7 +4,12 @@ use Mix.Config
 # you can enable the server option below.
 config :app, App.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
+
+config :hound,
+  driver: "chrome_driver",
+  app_host: "http://localhost",
+  app_port: 4001
 
 # Print only warnings and errors during test
 config :logger, level: :warn
