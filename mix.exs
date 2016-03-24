@@ -43,6 +43,7 @@ defmodule App.Mixfile do
      {:db_connection, "~> 0.2"},
      {:ecto, "~> 1.1"},
      {:fs, "~> 0.9"},
+     {:hound, "~> 0.7.6", only: :test},
      {:phoenix, "~> 1.1.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:poison, "1.5.2"},
